@@ -1,0 +1,21 @@
+<div class="m-5">
+    <form [formGroup]="salesTransactionForm" (ngSubmit)="createTransaction()">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Person Name</label>
+            <select class="form-select" name="sales_person_id" id="exampleFormControlInput1" formControlName="sales_person_id" placeholder="Select Name">
+                <option value="" selected>Select sales person name</option>
+                <option *ngFor="let name of sales_person" [value]="name.id">{{ name.name }}</option>
+            </select>              
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">Item Name</label>
+            <select class="form-select" name="item_id" id="exampleFormControlInput2" formControlName="item_id" aria-placeholder="Select Item">
+                <option value="" selected>Select item</option>
+                <option *ngFor="let item of item_list" [value]="item.id">{{ item.name }} - {{ item.price }}</option>
+            </select>              
+        </div>
+        <button type="submit" class="btn btn-success m-1">Add</button>
+        <button type="button" class="btn btn-secondary m-1" (click)="closeModal()">Close</button>
+
+    </form>
+</div>

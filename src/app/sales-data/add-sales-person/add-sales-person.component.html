@@ -1,0 +1,31 @@
+<div class="m-5">
+    <div>
+        <form [formGroup]="salesPersonForm" (ngSubmit)="createSalesPerson()">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Person Name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Person Name" formControlName="name">
+            </div>
+            <button type="submit" class="btn btn-success m-1">Add</button>
+            <button type="button" class="btn btn-secondary m-1" (click)="closeModal()">Close</button>
+        </form>
+    </div>
+    <div class="mt-3">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let person of sales_person">
+                    <td>{{ person.name }}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-primary btn-sm m-1" (click)="updateSalesPerson(person.id)">Update</button>
+                        <button type="button" class="btn btn-outline-danger btn-sm m-1" (click)="deleteSalesPerson(person.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

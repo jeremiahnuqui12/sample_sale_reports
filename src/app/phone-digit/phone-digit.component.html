@@ -1,0 +1,21 @@
+<div class="m-5">
+    <div class="d-grid">
+        <div class="col-4">
+            <button *ngFor="let key of keys" type="button" class="btn btn-dark p-2 m-2" (click)="getSelectedKey(key.key)"> {{key.key}} <br>
+                <small *ngIf="key.characters.length">({{ key.characters.join("") }})</small>
+            </button>
+        </div>
+    </div>
+    <div class="mt-4">
+        <span>Input Keys:</span>
+        {{ selectedKeys.join(", ") }}
+    </div>
+    <div class="mt-4">
+        <span>Total Combinations:</span>
+        {{ allCombinations.length }}
+    </div>
+    <div class="mt-4">
+        <span>All Combinations:</span>
+        {{ allCombinations.join(", ") }}
+    </div>
+</div>

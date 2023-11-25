@@ -1,0 +1,27 @@
+<div>
+    <div class="m-5">
+        <button type="button" class="btn btn-outline-primary m-2" (click)="createTransactionRecord()">
+            Create Transaction
+        </button>
+        <button type="button" class="btn btn-outline-primary m-2" (click)="createSalesPerson()">
+            Add Sales Person
+        </button>
+        <button type="button" class="btn btn-outline-primary m-2" (click)="createItem()">
+            Add Item
+        </button>
+    </div>
+    <div class="m-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th *ngFor="let header_name of sales_report_header" class="text-center">{{ header_name }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let report of sales_report" class="text-center">
+                    <td *ngFor="let data of report">{{ data }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
